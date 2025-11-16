@@ -130,36 +130,83 @@
           温かみのある落ち着いた空間で、ご家族やご友人とぜひ当店でお過ごしください。
         </p>
 
-        <div class="card-grid card-grid-bottom">
-          <article class="image-card">
-            <div class="image-card-photo" style="background-image:url('images/about01.jpg');"></div>
-            <div class="image-card-overlay"></div>
-            <div class="image-card-text">
-              <p class="image-card-title">コンセプト</p>
-              <p class="image-card-caption">四季折々の旬の食材</p>
-            </div>
-          </article>
-
-          <article class="image-card">
-            <div class="image-card-photo" style="background-image:url('images/about02.jpg');"></div>
-            <div class="image-card-overlay"></div>
-            <div class="image-card-text">
-              <p class="image-card-title">シェフ・スタッフ</p>
-              <p class="image-card-caption">おもてなしのプロフェッショナル</p>
-            </div>
-          </article>
-
-          <article class="image-card">
-            <div class="image-card-photo" style="background-image:url('images/about03.jpg');"></div>
-            <div class="image-card-overlay"></div>
-            <div class="image-card-text">
-              <p class="image-card-title">店内の様子</p>
-              <p class="image-card-caption">温かみのある落ち着いた空間</p>
-            </div>
-          </article>
+      <!-- サムネイル -->
+    <div class="card-grid">
+      <article class="image-card about-thumb" data-target="about-concept">
+        <div class="image-card-photo" style="background-image:url('images/about01.jpg');"></div>
+        <div class="image-card-overlay"></div>
+        <div class="image-card-text">
+          <p class="image-card-title">コンセプト</p>
+          <p class="image-card-caption">四季折々の旬の食材</p>
         </div>
+      </article>
+
+      <article class="image-card about-thumb" data-target="about-chef">
+        <div class="image-card-photo" style="background-image:url('images/about02.jpg');"></div>
+        <div class="image-card-overlay"></div>
+        <div class="image-card-text">
+          <p class="image-card-title">シェフ・スタッフ</p>
+          <p class="image-card-caption">経験豊富なプロフェッショナル</p>
+        </div>
+      </article>
+
+      <article class="image-card about-thumb" data-target="about-interior">
+        <div class="image-card-photo" style="background-image:url('images/about03.jpg');"></div>
+        <div class="image-card-overlay"></div>
+        <div class="image-card-text">
+          <p class="image-card-title">店内の様子</p>
+          <p class="image-card-caption">温かみのある落ち着いた空間</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- 紹介文カード（クリックされたサムネイルに応じて表示） -->
+    <div class="about-detail-grid">
+      <div class="card about-card" id="about-concept">
+        <p>
+          「季節の野菜」という店名が示す通り、私たちは四季折々の旬の食材にこだわり続けています。
+        </p>
+        <p>
+          地元の農家さんとの信頼関係を大切に、毎朝市場から届けられる新鮮な野菜や食材を使用し、
+          イタリアの伝統的な調理法と日本の食材を組み合わせ、素材本来の味わいを最大限に引き出した料理をご提供しています。
+        </p>
+        <p>
+          シンプルでありながら奥深い、本物のイタリアンをお楽しみください。
+        </p>
       </div>
-    </section>
+
+      <div class="card about-card" id="about-chef">
+        <p>【オーナーシェフ 山田 太郎】</p>
+        <p>
+          イタリア・トスカーナ地方の三つ星レストランで5年間修業。帰国後、都内の有名イタリアンレストランで10年間シェフを務め、
+          2020年に「Verdure di Stagione」をオープン。
+        </p>
+        <p>
+          「素材を活かすシンプルな調理」をモットーに、季節ごとに変わる旬の味わいをお届けしています。
+        </p>
+        <p>【スタッフ】</p>
+        <p>
+          経験豊富なソムリエとサービススタッフが、お客様の大切な時間を丁寧にサポートいたします。
+          料理に合わせたワインのペアリングもお気軽にご相談ください。
+        </p>
+      </div>
+
+      <div class="card about-card" id="about-interior">
+        <p>
+          温かな木目調の内装と、柔らかな照明が織りなす落ち着いた空間。全30席のアットホームな雰囲気の中で、
+          ゆったりとお食事をお楽しみいただけます。
+        </p>
+        <p>
+          大切な方とのディナー、記念日のお祝い、ビジネスでのご利用など、様々なシーンに対応できる個室もご用意しております。
+        </p>
+        <p>
+          窓からは四季折々の景色を眺めることができ、昼と夜で異なる雰囲気をお楽しみいただけます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- ご予約 -->
     <section id="reserve" class="section section-white">
