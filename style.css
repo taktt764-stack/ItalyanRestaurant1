@@ -244,15 +244,13 @@ img {
 
 .about-card {
   padding: 16px 18px;
-  display: none; /* 最初は非表示 */
+  display: none;        /* 基本は非表示 */
 }
 
-/* サムネイルがクリックされて表示対象になったカード */
 .about-card.show {
-  display: block;
+  display: block;       /* JSで .show を付けたものだけ表示 */
 }
 
-/* サムネイルの選択状態（任意） */
 .about-thumb {
   cursor: pointer;
 }
