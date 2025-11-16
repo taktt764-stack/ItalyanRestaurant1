@@ -306,6 +306,90 @@ h1, h2, h3 {
   font-size: 11px;
   color: #8e6b3c;
 }
+/* カレンダー内で選択された日付の見た目 */
+.calendar-day.selected {
+  background-color: #b8641b;
+  color: #fff;
+  border-radius: 50%;
+}
+
+/* 予約フォーム全体（最初は非表示） */
+.reservation-form-wrapper {
+  max-width: 860px;
+  margin: 32px auto 24px;
+  background-color: #fff;
+  padding: 24px 24px 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  display: none; /* JSでvisibleクラスを付けて表示 */
+}
+
+.reservation-form-wrapper.visible {
+  display: block;
+}
+
+.reservation-selected-date {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* 予約フォーム内の行レイアウト */
+.reservation-form {
+  font-size: 13px;
+}
+
+.reserve-row {
+  margin-bottom: 16px;
+}
+
+.reserve-row-2 {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.reserve-field {
+  flex: 1;
+  min-width: 180px;
+}
+
+.reserve-row label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.reserve-row input,
+.reserve-row select,
+.reserve-row textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #e3c59b;
+  font-size: 13px;
+  font-family: inherit;
+  background-color: #fff;
+}
+
+.reserve-row textarea {
+  resize: vertical;
+}
+
+.required {
+  color: #d85b24;
+  font-size: 11px;
+}
+
+.btn-reservation {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.reservation-notes-under-form {
+  margin-top: 16px;
+  font-size: 11px;
+  color: #8e6b3c;
+}
 
 /* アクセス */
 .access-layout {
