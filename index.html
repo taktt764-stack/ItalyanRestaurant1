@@ -22,33 +22,61 @@
 
     <!-- MENU -->
     <section id="menu" class="section section-cream">
-      <div class="container">
-        <h2 class="section-title">MENU</h2>
+  <div class="container">
+    <h2 class="section-title">MENU</h2>
 
-        <div class="menu-toggle">
-          <button class="menu-toggle-btn active">Lunch</button>
-          <button class="menu-toggle-btn">Dinner</button>
-        </div>
+    <!-- タブ切り替え -->
+    <div class="menu-toggle">
+      <button class="menu-toggle-btn active" data-tab="lunch">Lunch</button>
+      <button class="menu-toggle-btn" data-tab="dinner">Dinner</button>
+    </div>
 
-        <div class="card menu-card">
-          <ul class="menu-list">
-            <li class="menu-item">
-              <span class="menu-name">本日のパスタ</span>
-              <span class="menu-price">¥1,400</span>
-            </li>
-            <li class="menu-item">
-              <span class="menu-name">スタンダードコース</span>
-              <span class="menu-price">¥2,800</span>
-            </li>
-            <li class="menu-item">
-              <span class="menu-name">プレミアムコース</span>
-              <span class="menu-price">¥4,200</span>
-            </li>
-          </ul>
-          <p class="menu-note">※ランチタイム 11:30〜15:00</p>
-        </div>
-      </div>
-    </section>
+    <!-- メニュー表示 -->
+    <div class="card menu-card">
+
+      <!-- Lunch Menu -->
+      <ul class="menu-list" id="menu-lunch">
+        <li class="menu-item">
+          <span class="menu-name">今月のメインディッシュ</span>
+          <span class="menu-price"></span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-name">スタンダード</span>
+          <span class="menu-price">¥1,500</span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-name">プレミアム</span>
+          <span class="menu-price">¥3,000</span>
+        </li>
+      </ul>
+
+      <!-- Dinner Menu -->
+      <ul class="menu-list" id="menu-dinner" style="display:none;">
+        <li class="menu-item">
+          <span class="menu-name">本日の前菜盛り合わせ</span>
+          <span class="menu-price">¥1,800</span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-name">手打ちパスタ トリュフソース</span>
+          <span class="menu-price">¥2,400</span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-name">地鶏のグリル バルサミコソース</span>
+          <span class="menu-price">¥2,800</span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-name">季節のリゾット</span>
+          <span class="menu-price">¥2,200</span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-name">自家製ティラミス</span>
+          <span class="menu-price">¥800</span>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
 
     <!-- こだわり -->
     <section id="kodawari" class="section section-white">
@@ -254,5 +282,30 @@
     </div>
   </footer>
 
+  <script>
+  const buttons = document.querySelectorAll('.menu-toggle-btn');
+  const lunchMenu = document.getElementById('menu-lunch');
+  const dinnerMenu = document.getElementById('menu-dinner');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // active 切り替え
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const tab = btn.dataset.tab;
+
+      // メニュー表示切り替え
+      if (tab === "lunch") {
+        lunchMenu.style.display = "block";
+        dinnerMenu.style.display = "none";
+      } else {
+        lunchMenu.style.display = "none";
+        dinnerMenu.style.display = "block";
+      }
+    });
+  });
+</script>
+  
 </body>
 </html>
