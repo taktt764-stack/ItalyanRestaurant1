@@ -1,29 +1,58 @@
-/* 全体設定 */
-* {
+/* 共通 */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-    Arial, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Meiryo", sans-serif;
-  color: #222;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
+    "Yu Gothic", "YuGothic", "Segoe UI", sans-serif;
+  color: #333;
+  line-height: 1.6;
   background-color: #ffffff;
 }
 
-/* 上部ヒーロー画像 */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-cream {
+  background-color: #fff7e6;
+}
+
+.section-white {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.08em;
+  margin: 0 0 32px;
+  color: #a24b1d;
+}
+
+/* ヒーロー */
 .hero {
   position: relative;
-  width: 100%;
-  height: 70vh; /* Figmaの比率に合わせてやや横長 */
-  background-image: url("https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1600&q=80");
+  height: 320px;
+  background-image: url("images/hero.jpg"); /* お好みの画像に変更してください */
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  color: #fff;
 }
 
 .hero-overlay {
@@ -31,80 +60,433 @@ body {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0.35)
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.6)
   );
 }
 
-.hero-content {
-  position: relative;
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: #fff;
-  padding: 0 1.5rem;
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  letter-spacing: 0.12em;
-  text-transform: none;
-  margin-bottom: 0.7rem;
+  font-size: 32px;
+  letter-spacing: 0.1em;
+  margin: 0 0 8px;
 }
 
 .hero-subtitle {
-  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
-  line-height: 1.6;
+  font-size: 14px;
+  margin: 0;
 }
 
-/* 真ん中の余白部分（白いスペース） */
-.content-space {
-  width: 100%;
-  min-height: 110vh; /* Figmaで縦長だったのでゆとりを持たせています */
+/* カード共通 */
+.card {
   background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* 下部のMENUセクション */
-.menu-hero {
-  position: relative;
-  width: 100%;
-  height: 60vh;
-  background-image: url("https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1600&q=80");
-  background-size: cover;
-  background-position: center;
+/* MENU */
+.menu-toggle {
+  width: 260px;
+  margin: 0 auto 16px;
+  background-color: #f0f0f0;
+  border-radius: 999px;
+  padding: 2px;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.menu-overlay {
+.menu-toggle-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  font-size: 11px;
+  padding: 6px 0;
+  cursor: default; /* 今回はダミーなのでクリック動作なし */
+}
+
+.menu-toggle-btn.active {
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12px 0 8px;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-name {
+  flex: 1;
+}
+
+.menu-price {
+  min-width: 70px;
+  text-align: right;
+}
+
+.menu-note {
+  text-align: center;
+  font-size: 11px;
+  color: #999;
+  margin: 6px 0 4px;
+}
+
+/* 画像カード */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.card-grid-bottom {
+  margin-top: 40px;
+}
+
+.image-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 140px;
+  color: #fff;
+}
+
+.image-card-photo {
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 248, 235, 0.78); /* 少しクリーム色のオーバーレイ */
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
 }
 
-.menu-content {
+.image-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+.image-card-text {
   position: relative;
-  margin-top: 3rem; /* 上から少し下げた位置にMENUを表示 */
+  z-index: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.image-card-title {
+  margin: 0 0 2px;
+  font-size: 13px;
+}
+
+.image-card-caption {
+  margin: 0;
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+/* お店について */
+.about-lead {
+  text-align: center;
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.about-text {
+  text-align: center;
+  font-size: 12px;
+  margin: 0 0 6px;
+}
+
+/* ご予約 */
+.reserve-card {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  padding: 24px 32px 28px;
   text-align: center;
 }
 
-.menu-title {
-  font-size: clamp(1.6rem, 3vw, 2rem);
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #b45d2e; /* オレンジ寄りのブラウン */
+.reserve-message {
+  margin: 0 0 16px;
+  font-size: 12px;
 }
 
-/* スマホ対応（縦長を想定） */
+.reserve-calendars {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.calendar-box {
+  width: 160px;
+}
+
+.calendar-title {
+  font-size: 12px;
+  margin: 0 0 6px;
+}
+
+.calendar-placeholder {
+  border-radius: 8px;
+  border: 1px solid #eee;
+  height: 140px;
+  font-size: 11px;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reserve-info {
+  text-align: center;
+  font-size: 12px;
+}
+
+.reserve-name {
+  margin: 0 0 4px;
+  font-weight: bold;
+}
+
+.reserve-tel {
+  margin: 0;
+}
+
+.reserve-time {
+  margin: 6px 0 0;
+}
+
+.reserve-note {
+  margin: 4px 0 0;
+  color: #999;
+  font-size: 11px;
+}
+
+/* アクセス */
+.access-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1.6fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.access-photo {
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  min-height: 220px;
+}
+
+.access-card {
+  padding: 20px 24px;
+  font-size: 12px;
+}
+
+.access-heading {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #a24b1d;
+}
+
+.access-address {
+  margin: 0 0 8px;
+}
+
+.access-detail {
+  margin: 0 0 6px;
+}
+
+.access-tel {
+  margin: 0 0 6px;
+}
+
+.access-hours {
+  margin: 0 0 10px;
+}
+
+.access-map-link {
+  font-size: 12px;
+  color: #c76730;
+  text-decoration: none;
+}
+
+.access-map-link:hover {
+  text-decoration: underline;
+}
+
+/* お知らせ */
+.news-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4px 0;
+}
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding: 10px 24px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  width: 60px;
+  color: #a24b1d;
+}
+
+.news-text {
+  flex: 1;
+}
+
+/* お問い合わせ */
+.contact-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 32px 28px;
+}
+
+.contact-form {
+  font-size: 12px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #c76730;
+}
+
+.form-actions {
+  text-align: right;
+}
+
+.btn-submit {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 32px;
+  font-size: 12px;
+  background-color: #c76730;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+/* フッター */
+.footer {
+  background-color: #8a440f;
+  color: #fbe9d6;
+  padding: 24px 0;
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.footer-name {
+  margin: 0 0 6px;
+  letter-spacing: 0.08em;
+}
+
+.footer-icons {
+  margin-bottom: 6px;
+}
+
+.footer-icon {
+  display: inline-block;
+  margin: 0 4px;
+  font-size: 13px;
+}
+
+.footer-copy {
+  margin: 0;
+}
+
+/* レスポンシブ */
 @media (max-width: 768px) {
-  .hero {
-    height: 60vh;
+  .section {
+    padding: 60px 0;
   }
 
-  .content-space {
-    min-height: 90vh;
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 
-  .menu-hero {
-    height: 50vh;
+  .reserve-calendars {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .access-wrapper {
+    grid-template-columns: 1fr;
   }
 }
