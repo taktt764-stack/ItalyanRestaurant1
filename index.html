@@ -2,150 +2,33 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Verdure di Stagione | 地元野菜が主役のイタリアン</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Verdure di Stagione - Italian Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body id="top" class="page">
+<body>
 
-  <!-- ヒーローエリア -->
+  <!-- 1枚目のヒーローエリア -->
   <header class="hero">
-    <div class="hero__overlay">
-      <h1 class="hero__title">Verdure di Stagione</h1>
-      <p class="hero__subtitle">地元の旬な野菜を味わうイタリアンレストラン</p>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Verdure di Stagione</h1>
+      <p class="hero-subtitle">旬の野菜を使ったイタリアンパスタ</p>
     </div>
   </header>
 
-  <main class="main">
-
-    <!-- コンセプト -->
-    <section class="section section--concept">
-      <div class="section__inner">
-        <h2 class="section__title">CONCEPT</h2>
-        <p class="section__text">
-          Verdure di Stagione（ヴェルドゥーレ・ディ・スタジョーネ）は、
-          地元の農家さんから届く旬の野菜を主役にしたイタリアンレストランです。<br>
-          素材そのものの甘みや香りを生かし、オリーブオイルやハーブでシンプルに仕上げた
-          前菜から、自家製パスタ、メインディッシュまでお楽しみいただけます。
-        </p>
-      </div>
-    </section>
-
-    <!-- 地元野菜について -->
-    <section class="section section--vegetable">
-      <div class="section__inner">
-        <h2 class="section__title">LOCAL VEGETABLES</h2>
-        <p class="section__text">
-          使用する野菜は、レストランから車で30分圏内の畑で育てられたものが中心です。
-          朝採れのフレッシュなトマト、色とりどりの葉野菜、季節ごとの根菜など、
-          その日一番おいしい状態のものだけを仕入れています。<br>
-          生産者さんの顔が見える安心感と、季節の移ろいをお皿の上で感じてください。
-        </p>
-      </div>
-    </section>
-
-    <!-- 店内の雰囲気 -->
-    <section class="section section--interior">
-      <div class="section__inner">
-        <h2 class="section__title">ATMOSPHERE</h2>
-        <p class="section__text">
-          木の温もりを感じる落ち着いた店内には、カウンター席とテーブル席をご用意。
-          おひとりでの食事から、ご家族やご友人とのお食事、記念日ディナーまで
-          幅広いシーンでご利用いただけます。<br>
-          ゆったりとした音楽と、キッチンから漂う香りに包まれながら、
-          心ほどける時間をお過ごしください。
-        </p>
-      </div>
-    </section>
-
-    <!-- 営業情報 -->
-    <section class="section section--info">
-      <div class="section__inner section__inner--columns">
-        <div class="section__column">
-          <h2 class="section__title">INFORMATION</h2>
-          <p class="section__text">
-            〒000-0000　〇〇県〇〇市〇〇町0-0-0<br>
-            TEL：00-0000-0000<br>
-            営業時間：<br>
-            ランチ　11:30〜14:30（L.O. 14:00）<br>
-            ディナー 17:30〜21:30（L.O. 21:00）<br>
-            定休日：火曜日
-          </p>
-        </div>
-        <div class="section__column">
-          <h2 class="section__title">RESERVATION</h2>
-          <p class="section__text">
-            お席に限りがあるため、ご予約をおすすめしております。<br>
-            お電話またはオンラインフォームよりご連絡ください。<br><br>
-            アレルギーや苦手な食材がございましたら、
-            ご予約時にお気軽にご相談ください。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MENU セクション（スクリーンショット下部の構成） -->
-    <section class="menu" id="menu">
-      <div class="menu__image-bar"></div>
-
-      <div class="menu__body">
-        <div class="menu__inner">
-          <h2 class="menu__title">MENU</h2>
-          <p class="menu__lead">
-            季節ごとに内容が変わるおすすめコースと、アラカルトをご用意しています。
-            ここでは一部のメニューをご紹介します。
-          </p>
-
-          <div class="menu__grid">
-            <div class="menu-column menu-column--antipasto">
-              <h3 class="menu-column__title">ANTIPASTO<span class="menu-column__subtitle">前菜</span></h3>
-              <ul class="menu-column__list">
-                <li class="menu-column__item">色とりどり野菜のバーニャカウダ</li>
-                <li class="menu-column__item">季節野菜のフリットミスト</li>
-                <li class="menu-column__item">自家製ピクルスとオリーブ盛り合わせ</li>
-              </ul>
-            </div>
-
-            <div class="menu-column menu-column--pasta">
-              <h3 class="menu-column__title">PRIMO PIATTO<span class="menu-column__subtitle">パスタ</span></h3>
-              <ul class="menu-column__list">
-                <li class="menu-column__item">旬野菜と自家製ベーコンのペペロンチーノ</li>
-                <li class="menu-column__item">地元トマトとバジルのスパゲッティ</li>
-                <li class="menu-column__item">ポロ葱とゴルゴンゾーラのクリームソース</li>
-              </ul>
-            </div>
-
-            <div class="menu-column menu-column--secondo">
-              <h3 class="menu-column__title">SECONDO<span class="menu-column__subtitle">メイン</span></h3>
-              <ul class="menu-column__list">
-                <li class="menu-column__item">旬野菜のグリルと牛ランプのタリアータ</li>
-                <li class="menu-column__item">真鯛のソテー　ハーブとレモンのソース</li>
-                <li class="menu-column__item">季節野菜たっぷりのラタトゥイユ風煮込み</li>
-              </ul>
-            </div>
-          </div>
-
-          <p class="menu__note">
-            ※メニュー内容は仕入れ状況や季節によって変更になる場合がございます。
-          </p>
-        </div>
-      </div>
-    </section>
-
+  <!-- 中央の余白エリア（Figmaのレイアウトどおり、白いスペース） -->
+  <main class="content-space">
+    <!-- ここにはまだコンテンツを置かず、余白だけの構成にしています -->
   </main>
 
-  <footer class="footer">
-    <div class="footer__inner">
-      <p class="footer__copy">
-        © Verdure di Stagione. All Rights Reserved.
-      </p>
+  <!-- 下部のMENUセクション -->
+  <section class="menu-hero">
+    <div class="menu-overlay"></div>
+    <div class="menu-content">
+      <h2 class="menu-title">MENU</h2>
     </div>
-  </footer>
-
-  <!-- ページトップに戻るボタン（ページ右下） -->
-  <a href="#top" class="back-to-top" aria-label="ページトップに戻る">
-    ↑
-  </a>
+  </section>
 
 </body>
 </html>
