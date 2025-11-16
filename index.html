@@ -353,55 +353,48 @@
       }
     });
   });
-</script>
-  
 <script>
-  // ▼ MENU タブ切り替え（すでに追加済みならそのままでOK）
-  const buttons = document.querySelectorAll('.menu-toggle-btn');
-  const lunchMenu = document.getElementById('menu-lunch');
-  const dinnerMenu = document.getElementById('menu-dinner');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    /* ▼ お店について：サムネイルクリックで紹介文表示 */
+    const aboutThumbs = document.querySelectorAll('.about-thumb');
+    const aboutCards = document.querySelectorAll('.about-card');
 
-      const tab = btn.dataset.tab;
-      if (tab === "lunch") {
-        lunchMenu.style.display = "block";
-        dinnerMenu.style.display = "none";
-      } else {
-        lunchMenu.style.display = "none";
-        dinnerMenu.style.display = "block";
-      }
-    });
-  });
-
-  // ▼ お店について：サムネイルクリックで紹介文表示
-  const aboutThumbs = document.querySelectorAll('.about-thumb');
-  const aboutCards = document.querySelectorAll('.about-card');
-
-  // 初期状態：何も表示されていないので、最初のカードだけ表示
-  if (aboutCards[0]) {
-    aboutCards[0].classList.add('show');
-    if (aboutThumbs[0]) aboutThumbs[0].classList.add('active');
-  }
-
-  aboutThumbs.forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      const targetId = thumb.dataset.target;
-
-      // サムネイルの active 切り替え
-      aboutThumbs.forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-
-      // 紹介文カードの表示切り替え
+    // 初期状態の調整（HTML側で show を付けているので本来は不要だが念のため）
+    if (aboutCards.length) {
+      let first = true;
       aboutCards.forEach(card => {
-        if (card.id === targetId) {
+        if (first) {
           card.classList.add('show');
+          first = false;
         } else {
           card.classList.remove('show');
         }
+      });
+    }
+    if (aboutThumbs.length) {
+      aboutThumbs.forEach(t => t.classList.remove('active'));
+      aboutThumbs[0].classList.add('active');
+    }
+
+    // クリックイベント
+    aboutThumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const targetId = thumb.dataset.target;
+
+        // サムネイルの active 切り替え
+        aboutThumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+
+        // カードの表示切り替え
+        aboutCards.forEach(card => {
+          if (card.id === targetId) {
+            card.classList.add('show');
+          } else {
+            card.classList.remove('show');
+          }
+        });
       });
     });
   });
