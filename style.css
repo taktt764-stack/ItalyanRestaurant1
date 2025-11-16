@@ -1,4 +1,4 @@
-/* 共通 */
+/* 全体 */
 *,
 *::before,
 *::after {
@@ -7,11 +7,10 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
-    "Yu Gothic", "YuGothic", "Segoe UI", sans-serif;
-  color: #333;
-  line-height: 1.6;
-  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+  color: #4a2c16;
+  background-color: #fff8e9;
+  line-height: 1.7;
 }
 
 img {
@@ -19,37 +18,42 @@ img {
   display: block;
 }
 
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* コンテナ & セクション */
 .section {
-  padding: 80px 0;
+  padding: 60px 16px;
 }
 
-.section-cream {
-  background-color: #fff7e6;
-}
-
-.section-white {
-  background-color: #ffffff;
+.section-alt {
+  background-color: #fff2dc;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .section-title {
   text-align: center;
-  font-size: 24px;
-  letter-spacing: 0.08em;
-  margin: 0 0 32px;
-  color: #a24b1d;
+  font-size: 28px;
+  letter-spacing: 0.1em;
+  color: #b8641b;
+  margin-bottom: 32px;
+}
+
+.section-lead {
+  text-align: center;
+  margin-bottom: 32px;
 }
 
 /* ヒーロー */
 .hero {
   position: relative;
-  height: 320px;
-  background-image: url("images/hero.jpg"); /* お好みの画像に変更してください */
+  height: 420px;
+  background-image: url("https://via.placeholder.com/1600x900?text=Italian+Pasta");
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -58,346 +62,310 @@ img {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.6)
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.6));
 }
 
 .hero-inner {
-  max-width: 960px;
-  margin: 0 auto;
+  position: relative;
   height: 100%;
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .hero-title {
-  font-size: 32px;
-  letter-spacing: 0.1em;
-  margin: 0 0 8px;
+  font-size: 36px;
+  margin-bottom: 8px;
+  letter-spacing: 0.08em;
 }
 
 .hero-subtitle {
   font-size: 14px;
-  margin: 0;
-}
-
-/* カード共通 */
-.card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* MENU */
 .menu-toggle {
-  width: 260px;
-  margin: 0 auto 16px;
-  background-color: #f0f0f0;
-  border-radius: 999px;
-  padding: 2px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  background-color: #fff;
+  padding: 4px;
+  border-radius: 999px;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.menu-toggle-btn {
+.menu-tab {
   flex: 1;
   border: none;
   background: transparent;
   border-radius: 999px;
-  font-size: 11px;
-  padding: 6px 0;
-  cursor: default; /* 今回はダミーなのでクリック動作なし */
+  padding: 8px 0;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
 
-.menu-toggle-btn.active {
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-}
-
-.menu-card {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 12px 0 8px;
+.menu-tab.active {
+  background-color: #f5c98b;
+  color: #5a3413;
+  font-weight: 600;
 }
 
 .menu-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display: none;
+  background-color: #fff;
+  padding: 24px 24px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
-.menu-item {
+.menu-list.active {
+  display: block;
+}
+
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 24px;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 13px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0d4b0;
+  font-size: 14px;
 }
 
-.menu-item:last-child {
+.menu-list li:last-child {
   border-bottom: none;
 }
 
-.menu-name {
-  flex: 1;
-}
-
-.menu-price {
-  min-width: 70px;
-  text-align: right;
+.menu-item-price {
+  color: #b8641b;
 }
 
 .menu-note {
+  margin-top: 24px;
+  font-size: 12px;
   text-align: center;
-  font-size: 11px;
-  color: #999;
-  margin: 6px 0 4px;
+  color: #a67135;
 }
 
-/* 画像カード */
+/* カードレイアウト */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.card-grid-bottom {
-  margin-top: 40px;
+.info-card {
+  background-color: transparent;
 }
 
-.image-card {
-  position: relative;
-  border-radius: 10px;
+.thumbnail {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 12px;
   overflow: hidden;
-  height: 140px;
-  color: #fff;
-}
-
-.image-card-photo {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.03);
-}
-
-.image-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.6)
-  );
-}
-
-.image-card-text {
   position: relative;
-  z-index: 1;
-  padding: 12px;
+}
+
+.thumbnail img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);
+  color: #fff;
 }
 
-.image-card-title {
-  margin: 0 0 2px;
+.thumb-title {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.thumb-subtitle {
+  font-size: 12px;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.description {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
   font-size: 13px;
+  display: none;
 }
 
-.image-card-caption {
-  margin: 0;
-  font-size: 11px;
-  opacity: 0.9;
+.info-card.open .description {
+  display: block;
 }
 
 /* お店について */
-.about-lead {
-  text-align: center;
-  font-size: 13px;
-  margin: 0 0 12px;
-}
-
 .about-text {
-  text-align: center;
-  font-size: 12px;
-  margin: 0 0 6px;
-}
-
-.about-detail-grid {
-  margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  font-size: 12px;
-}
-
-.about-card {
-  padding: 16px 18px;
-  display: none;        /* 基本は非表示 */
-}
-
-.about-card.show {
-  display: block;       /* JSで .show を付けたものだけ表示 */
-}
-
-.about-thumb {
-  cursor: pointer;
-}
-
-.about-thumb.active .image-card-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0.7)
-  );
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6) inset;
-}
-
-/* ご予約 */
-.reserve-card {
   max-width: 760px;
-  margin: 0 auto 24px;
-  padding: 24px 32px 28px;
-  text-align: center;
-}
-
-.reserve-message {
-  margin: 0 0 16px;
-  font-size: 12px;
-}
-
-.reserve-calendars {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
-
-.calendar-box {
-  width: 160px;
-}
-
-.calendar-title {
-  font-size: 12px;
-  margin: 0 0 6px;
-}
-
-.calendar-placeholder {
-  border-radius: 8px;
-  border: 1px solid #eee;
-  height: 140px;
-  font-size: 11px;
-  color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.reserve-info {
-  text-align: center;
-  font-size: 12px;
-}
-
-.reserve-name {
-  margin: 0 0 4px;
-  font-weight: bold;
-}
-
-.reserve-tel {
-  margin: 0;
-}
-
-.reserve-time {
-  margin: 6px 0 0;
-}
-
-.reserve-note {
-  margin: 4px 0 0;
-  color: #999;
-  font-size: 11px;
-}
-
-/* アクセス */
-.access-wrapper {
-  display: grid;
-  grid-template-columns: 1.2fr 1.6fr;
-  gap: 28px;
-  align-items: stretch;
-}
-
-.access-photo {
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  min-height: 220px;
-}
-
-.access-card {
-  padding: 20px 24px;
-  font-size: 12px;
-}
-
-.access-heading {
-  margin: 0 0 8px;
+  margin: 0 auto 40px;
   font-size: 14px;
-  color: #a24b1d;
+  text-align: center;
 }
 
-.access-address {
-  margin: 0 0 8px;
+/* 予約 */
+.reservation-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  justify-items: center;
+  margin-bottom: 32px;
 }
 
-.access-detail {
-  margin: 0 0 6px;
-}
-
-.access-tel {
-  margin: 0 0 6px;
-}
-
-.access-hours {
-  margin: 0 0 10px;
-}
-
-.access-map-link {
+.calendar {
+  background-color: #fff;
+  padding: 16px 20px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
   font-size: 12px;
-  color: #c76730;
-  text-decoration: none;
 }
 
-.access-map-link:hover {
-  text-decoration: underline;
+.calendar-header {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-/* お知らせ */
-.news-card {
-  max-width: 760px;
-  margin: 0 auto;
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+  width: 14.28%;
+  text-align: center;
   padding: 4px 0;
 }
 
+.calendar th {
+  font-weight: 500;
+  font-size: 11px;
+  color: #a36a29;
+}
+
+.calendar td {
+  border-radius: 50%;
+}
+
+.calendar td:hover {
+  background-color: #ffe5c4;
+  cursor: pointer;
+}
+
+.reservation-contact {
+  text-align: center;
+  font-size: 13px;
+}
+
+.reservation-phone-title {
+  margin-bottom: 4px;
+}
+
+.reservation-phone-number {
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.reservation-phone-time {
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.reservation-note {
+  font-size: 11px;
+  color: #8e6b3c;
+}
+
+/* アクセス */
+.access-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.access-photo img {
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+.access-info {
+  background-color: #fff;
+  padding: 20px 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  font-size: 13px;
+}
+
+.access-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.access-open {
+  margin: 16px 0 0;
+}
+
+.access-open dt {
+  font-weight: 600;
+  float: left;
+  clear: left;
+}
+
+.access-open dd {
+  margin: 0 0 4px 90px;
+}
+
+/* お知らせ */
 .news-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  max-width: 680px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 
 .news-item {
   display: flex;
-  align-items: center;
-  font-size: 12px;
-  padding: 10px 24px;
-  border-bottom: 1px solid #f2f2f2;
+  padding: 10px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid #f2dfc3;
 }
 
 .news-item:last-child {
@@ -406,7 +374,7 @@ img {
 
 .news-date {
   width: 60px;
-  color: #a24b1d;
+  color: #b8641b;
 }
 
 .news-text {
@@ -414,109 +382,98 @@ img {
 }
 
 /* お問い合わせ */
-.contact-card {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 24px 32px 28px;
-}
-
 .contact-form {
-  font-size: 12px;
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 24px 24px 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  font-size: 13px;
 }
 
-.form-group {
+.form-row {
   margin-bottom: 16px;
 }
 
-.form-group label {
+.form-row label {
   display: block;
   margin-bottom: 4px;
 }
 
-.form-group input,
-.form-group textarea {
+.form-row input,
+.form-row textarea {
   width: 100%;
-  border-radius: 6px;
-  border: 1px solid #ddd;
   padding: 8px 10px;
-  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #e3c59b;
+  font-size: 13px;
   font-family: inherit;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #c76730;
-}
-
-.form-actions {
-  text-align: right;
-}
-
-.btn-submit {
+.btn-primary {
+  display: inline-block;
   border: none;
-  border-radius: 999px;
-  padding: 10px 32px;
-  font-size: 12px;
-  background-color: #c76730;
+  background-color: #c87222;
   color: #fff;
+  padding: 10px 32px;
+  border-radius: 999px;
+  font-size: 13px;
   cursor: pointer;
+  margin-top: 4px;
 }
 
-.btn-submit:hover {
-  opacity: 0.9;
+.btn-primary:hover {
+  background-color: #b3651d;
 }
 
 /* フッター */
 .footer {
-  background-color: #8a440f;
-  color: #fbe9d6;
-  padding: 24px 0;
-}
-
-.footer-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+  background-color: #7b3c10;
+  color: #f8e9d4;
+  padding: 24px 16px 28px;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .footer-name {
-  margin: 0 0 6px;
-  letter-spacing: 0.08em;
+  font-size: 16px;
+  margin-bottom: 8px;
 }
 
-.footer-icons {
-  margin-bottom: 6px;
-}
-
-.footer-icon {
-  display: inline-block;
-  margin: 0 4px;
-  font-size: 13px;
+.footer-sns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
 .footer-copy {
-  margin: 0;
+  opacity: 0.8;
 }
 
 /* レスポンシブ */
-@media (max-width: 768px) {
-  .section {
-    padding: 60px 0;
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .access-layout,
+  .reservation-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
 
-  .reserve-calendars {
-    flex-direction: column;
-    align-items: center;
+  .hero-title {
+    font-size: 28px;
   }
 
-  .access-wrapper {
-    grid-template-columns: 1fr;
+  .hero-subtitle {
+    font-size: 12px;
   }
 }
