@@ -244,60 +244,126 @@
 
   <!-- ご予約 -->
   <section class="section section-alt" id="reservation">
-    <div class="container">
-      <h2 class="section-title">ご予約</h2>
-      <p class="section-lead">ご希望の日付を選択してください</p>
+  <div class="container">
+    <h2 class="section-title">ご予約</h2>
+    <p class="section-lead">ご希望の日付を選択してください</p>
 
-      <div class="reservation-layout">
-        <!-- カレンダー1 -->
-        <div class="calendar">
-          <div class="calendar-header">November 2025</div>
-          <table>
-            <thead>
-              <tr>
-                <th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
-              <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
-              <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-              <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
-              <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
-              <tr><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- カレンダー2 -->
-        <div class="calendar">
-          <div class="calendar-header">December 2025</div>
-          <table>
-            <thead>
-              <tr>
-                <th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-              <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-              <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-              <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
-              <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
-            </tbody>
-          </table>
-        </div>
+    <!-- カレンダー2つ -->
+    <div class="reservation-layout">
+      <!-- 11月 -->
+      <div class="calendar" data-year="2025" data-month="11">
+        <div class="calendar-header">November 2025</div>
+        <table>
+          <thead>
+          <tr>
+            <th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td><td class="calendar-day">1</td></tr>
+          <tr><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td></tr>
+          <tr><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td></tr>
+          <tr><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td></tr>
+          <tr><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td></tr>
+          <tr><td class="calendar-day">30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="reservation-contact">
-        <p class="reservation-phone-title">お電話でのご予約</p>
-        <p class="reservation-phone-number">03-1234-5678</p>
-        <p class="reservation-phone-time">受付時間：11:00〜21:00（月曜定休）</p>
-        <p class="reservation-note">※月曜日は定休日のため選択できません</p>
-        <p class="reservation-note">※ご予約は前日までにお願いいたします</p>
+      <!-- 12月 -->
+      <div class="calendar" data-year="2025" data-month="12">
+        <div class="calendar-header">December 2025</div>
+        <table>
+          <thead>
+          <tr>
+            <th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr><td></td><td></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td></tr>
+          <tr><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td></tr>
+          <tr><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td></tr>
+          <tr><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td></tr>
+          <tr><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td></td><td></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </section>
+
+    <!-- 日付を選んだあとのフォーム（最初は非表示） -->
+    <div class="reservation-form-wrapper" id="reservationForm">
+      <p class="reservation-selected-date" id="selectedDateText"></p>
+
+      <form class="reservation-form">
+        <input type="hidden" id="reservationDate" name="date">
+
+        <div class="reserve-row reserve-row-2">
+          <div class="reserve-field">
+            <label>お名前 <span class="required">*</span></label>
+            <input type="text" name="name">
+          </div>
+          <div class="reserve-field">
+            <label>電話番号 <span class="required">*</span></label>
+            <input type="tel" name="tel">
+          </div>
+        </div>
+
+        <div class="reserve-row">
+          <label>メールアドレス</label>
+          <input type="email" name="email">
+        </div>
+
+        <div class="reserve-row reserve-row-2">
+          <div class="reserve-field">
+            <label>お時間 <span class="required">*</span></label>
+            <select name="time">
+              <option value="">選択してください</option>
+              <option>11:30</option>
+              <option>12:00</option>
+              <option>12:30</option>
+              <option>18:00</option>
+              <option>19:00</option>
+              <option>20:00</option>
+            </select>
+          </div>
+          <div class="reserve-field">
+            <label>人数 <span class="required">*</span></label>
+            <select name="people">
+              <option value="">選択してください</option>
+              <option>1名</option>
+              <option>2名</option>
+              <option>3名</option>
+              <option>4名</option>
+              <option>5名</option>
+              <option>6名以上</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="reserve-row">
+          <label>ご要望・アレルギー等</label>
+          <textarea name="request" rows="4" placeholder="個室希望、アレルギー情報など"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-reservation">予約を確認する</button>
+      </form>
+
+      <div class="reservation-notes-under-form">
+        <p>※お急ぎの際はお電話にて直接ご連絡ください</p>
+        <p>※キャンセルは前日までにご連絡お願いいたします</p>
+      </div>
+    </div>
+
+    <!-- 電話予約案内（元のまま） -->
+    <div class="reservation-contact">
+      <p class="reservation-phone-title">お電話でのご予約</p>
+      <p class="reservation-phone-number">03-1234-5678</p>
+      <p class="reservation-phone-time">受付時間：11:00〜21:00（月曜定休）</p>
+      <p class="reservation-note">※月曜日は定休日のため選択できません</p>
+      <p class="reservation-note">※ご予約は前日までにお願いいたします</p>
+    </div>
+  </div>
+</section>
 
   <!-- アクセス -->
   <section class="section" id="access">
@@ -379,28 +445,64 @@
   </footer>
 
   <script>
-    // MENU 切り替え
-    const tabs = document.querySelectorAll('.menu-tab');
-    const lists = document.querySelectorAll('.menu-list');
+  // MENU 切り替え
+  const tabs = document.querySelectorAll('.menu-tab');
+  const lists = document.querySelectorAll('.menu-list');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        lists.forEach(l => l.classList.remove('active'));
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      lists.forEach(l => l.classList.remove('active'));
 
-        tab.classList.add('active');
-        const targetId = tab.getAttribute('data-target');
-        document.getElementById(targetId).classList.add('active');
-      });
+      tab.classList.add('active');
+      const targetId = tab.getAttribute('data-target');
+      document.getElementById(targetId).classList.add('active');
     });
+  });
 
-    // サムネイルクリックで説明文の表示 / 非表示
-    document.querySelectorAll('.info-card .thumbnail').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const card = btn.closest('.info-card');
-        card.classList.toggle('open');
-      });
+  // サムネイルクリックで説明文の表示 / 非表示
+  document.querySelectorAll('.info-card .thumbnail').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.info-card');
+      card.classList.toggle('open');
     });
-  </script>
+  });
+
+  // ===== ここから予約カレンダー用 =====
+  const calendarDays = document.querySelectorAll('.calendar-day');
+  const reservationFormWrapper = document.getElementById('reservationForm');
+  const selectedDateText = document.getElementById('selectedDateText');
+  const reservationDateInput = document.getElementById('reservationDate');
+
+  calendarDays.forEach(day => {
+    day.addEventListener('click', () => {
+      // いったん全部の選択状態を解除
+      calendarDays.forEach(d => d.classList.remove('selected'));
+      // クリックした日付を選択状態に
+      day.classList.add('selected');
+
+      const calendar = day.closest('.calendar');
+      const year = calendar.dataset.year;       // "2025"
+      const month = Number(calendar.dataset.month); // 11, 12 など
+      const dayNum = Number(day.textContent.trim());
+
+      // 見出し用のテキスト
+      selectedDateText.textContent = `${year}年${month}月${dayNum}日のご予約`;
+
+      // hiddenフィールド用（例: 2025-11-18）
+      if (reservationDateInput) {
+        const mm = String(month).padStart(2, '0');
+        const dd = String(dayNum).padStart(2, '0');
+        reservationDateInput.value = `${year}-${mm}-${dd}`;
+      }
+
+      // フォームを表示
+      reservationFormWrapper.classList.add('visible');
+
+      // 少し下にスクロール（見やすくするため）
+      reservationFormWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
 </body>
 </html>
