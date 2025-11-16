@@ -1,14 +1,18 @@
-/* --- 基本設定とリセット --- */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.7;
-  color: #333;
-  background-color: #fff;
+/* ベース
+------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
+body.page {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  color: #333;
+  background-color: #ffffff;
+  line-height: 1.7;
 }
 
 img {
@@ -17,138 +21,235 @@ img {
   display: block;
 }
 
-/* --- Block: header --- */
-.header {
-  border-bottom: 1px solid #f0f0f0;
-  padding: 1rem;
-}
-
-.header__container {
-  max-width: 800px; /* 記事の幅と合わせる */
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.header__nav {
-  font-size: 1.5rem; /* アイコンサイズ調整用 */
-}
-
-/* --- Block: main (記事を中央に配置) --- */
 .main {
-  padding: 2rem 1rem;
+  background-color: #ffffff;
 }
 
-/* --- Block: article --- */
-.article {
-  max-width: 800px; /* スクリーンショットから推測されるコンテンツ幅 */
-  margin: 0 auto;
+/* ヒーローエリア
+------------------------------ */
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  background-image: url("img/hero-pasta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
 }
 
-.article__header {
-  margin-bottom: 2rem;
-}
-
-.article__title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: left; /* 画像では左揃えに見える */
-  margin-bottom: 1.5rem;
-}
-
-.article__image {
+.hero__overlay {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  height: auto;
-  border-radius: 4px; /* お好みで角丸に */
+  height: 100%;
+  padding: 80px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
 }
 
-.article__content {
-  /* 本文全体のスタイル（もしあれば） */
+.hero__title {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  letter-spacing: 0.1em;
+  margin: 0 0 16px;
 }
 
-.article__section {
-  margin-bottom: 2rem;
-}
-
-.article__subheading {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #222;
-  margin-bottom: 1rem;
-  padding-left: 1.8em; /* アイコン分のスペースを確保 */
-  position: relative; /* 疑似要素の基準位置 */
-}
-
-/* * スクリーンショットの特徴的な「赤い丸」を
- * 疑似要素(::before)で表現
- */
-.article__subheading::before {
-  content: '';
-  display: inline-block;
-  width: 1em; /* フォントサイズに基づく相対的な大きさ */
-  height: 1em;
-  background-color: #e60012; /* 推測される赤色 */
-  border-radius: 50%; /* 円形にする */
-  
-  /* 位置調整 */
-  position: absolute;
-  left: 0;
-  top: 0.3em; /* 見出しの高さに合わせて微調整 */
-}
-
-.article__paragraph {
-  font-size: 1rem;
-  margin-bottom: 1em;
-}
-
-.article__quote {
-  background-color: #f8f8f8; /* 引用の背景色 */
-  border-left: 5px solid #ccc; /* 引用の左線 */
-  margin: 2rem 0;
-  padding: 1.5rem;
-  font-style: italic;
-  color: #555;
-}
-
-.article__quote p {
+.hero__subtitle {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
   margin: 0;
 }
 
-.article__list-heading {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+/* 共通セクション
+------------------------------ */
+
+.section {
+  padding: 64px 16px;
 }
 
-.article__list {
-  padding-left: 2rem;
+.section--concept {
+  background-color: #faf7f1;
 }
 
-.article__list-item {
-  margin-bottom: 0.5rem;
+.section--vegetable {
+  background-color: #ffffff;
 }
 
-/* --- Block: footer --- */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 3rem 1rem;
-  margin-top: 3rem;
+.section--interior {
+  background-color: #faf7f1;
 }
 
-.footer__container {
-  max-width: 800px;
+.section--info {
+  background-color: #ffffff;
+}
+
+.section__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section__inner--columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .section__inner--columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.section__column {
+  min-width: 0;
+}
+
+.section__title {
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+  margin: 0 0 16px;
+}
+
+.section__text {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* MENU セクション
+------------------------------ */
+
+.menu {
+  margin-top: 64px;
+}
+
+.menu__image-bar {
+  width: 100%;
+  height: 120px;
+  background-image: url("img/hero-pasta.jpg"); /* 上部にスクリーンショットと同じ写真の帯 */
+  background-size: cover;
+  background-position: center;
+}
+
+.menu__body {
+  background-color: #f8f1de; /* クリーム色の背景 */
+  padding: 48px 16px 64px;
+}
+
+.menu__inner {
+  max-width: 960px;
   margin: 0 auto;
   text-align: center;
 }
 
-.footer__copyright {
+.menu__title {
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  margin: 0 0 16px;
+  color: #a2551c;
+}
+
+.menu__lead {
+  margin: 0 auto 32px;
+  max-width: 640px;
+  font-size: 0.95rem;
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .menu__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.menu-column {
+  padding: 16px;
+}
+
+.menu-column__title {
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  margin: 0 0 8px;
+  color: #a2551c;
+}
+
+.menu-column__subtitle {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #777;
+  margin-top: 4px;
+}
+
+.menu-column__list {
+  list-style: none;
+  padding: 0;
   margin: 0;
+}
+
+.menu-column__item {
   font-size: 0.9rem;
+  padding: 4px 0;
+}
+
+.menu__note {
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* フッター
+------------------------------ */
+
+.footer {
+  background-color: #222;
+  color: #ffffff;
+  padding: 24px 16px;
+}
+
+.footer__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/* ページトップに戻るボタン
+------------------------------ */
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
