@@ -1,0 +1,154 @@
+/* --- 基本設定とリセット --- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Block: header --- */
+.header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 1rem;
+}
+
+.header__container {
+  max-width: 800px; /* 記事の幅と合わせる */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header__nav {
+  font-size: 1.5rem; /* アイコンサイズ調整用 */
+}
+
+/* --- Block: main (記事を中央に配置) --- */
+.main {
+  padding: 2rem 1rem;
+}
+
+/* --- Block: article --- */
+.article {
+  max-width: 800px; /* スクリーンショットから推測されるコンテンツ幅 */
+  margin: 0 auto;
+}
+
+.article__header {
+  margin-bottom: 2rem;
+}
+
+.article__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left; /* 画像では左揃えに見える */
+  margin-bottom: 1.5rem;
+}
+
+.article__image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px; /* お好みで角丸に */
+}
+
+.article__content {
+  /* 本文全体のスタイル（もしあれば） */
+}
+
+.article__section {
+  margin-bottom: 2rem;
+}
+
+.article__subheading {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 1rem;
+  padding-left: 1.8em; /* アイコン分のスペースを確保 */
+  position: relative; /* 疑似要素の基準位置 */
+}
+
+/* * スクリーンショットの特徴的な「赤い丸」を
+ * 疑似要素(::before)で表現
+ */
+.article__subheading::before {
+  content: '';
+  display: inline-block;
+  width: 1em; /* フォントサイズに基づく相対的な大きさ */
+  height: 1em;
+  background-color: #e60012; /* 推測される赤色 */
+  border-radius: 50%; /* 円形にする */
+  
+  /* 位置調整 */
+  position: absolute;
+  left: 0;
+  top: 0.3em; /* 見出しの高さに合わせて微調整 */
+}
+
+.article__paragraph {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+.article__quote {
+  background-color: #f8f8f8; /* 引用の背景色 */
+  border-left: 5px solid #ccc; /* 引用の左線 */
+  margin: 2rem 0;
+  padding: 1.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+.article__quote p {
+  margin: 0;
+}
+
+.article__list-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.article__list {
+  padding-left: 2rem;
+}
+
+.article__list-item {
+  margin-bottom: 0.5rem;
+}
+
+/* --- Block: footer --- */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer__container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 0.9rem;
+}
