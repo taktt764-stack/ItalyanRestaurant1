@@ -53,16 +53,12 @@ h1, h2, h3 {
 .hero {
   position: relative;
   height: 420px;
-  background-image: url("https://via.placeholder.com/1600x900?text=Italian+Pasta");
+  /* ここを差し替え */
+  background-image: url("hero.jpg");   /* または images/hero.jpg など */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.6));
 }
 
 .hero-inner {
