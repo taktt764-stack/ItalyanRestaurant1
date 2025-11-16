@@ -54,7 +54,7 @@ h1, h2, h3 {
   position: relative;
   height: 420px;
   /*hero.jpeg*/
-  background-image: url("hero.jpg");   /* または images/hero.jpg など */
+  background-image: url("hero.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
