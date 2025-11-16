@@ -1,255 +1,110 @@
-/* ベース
------------------------------- */
-
-*,
-*::before,
-*::after {
+/* 全体設定 */
+* {
   box-sizing: border-box;
-}
-
-body.page {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
-  color: #333;
-  background-color: #ffffff;
-  line-height: 1.7;
+  padding: 0;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.main {
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Arial, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Meiryo", sans-serif;
+  color: #222;
   background-color: #ffffff;
 }
 
-/* ヒーローエリア
------------------------------- */
-
+/* 上部ヒーロー画像 */
 .hero {
   position: relative;
-  min-height: 70vh;
-  background-image: url("img/hero-pasta.jpg");
+  width: 100%;
+  height: 70vh; /* Figmaの比率に合わせてやや横長 */
+  background-image: url("https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.hero__overlay {
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.35)
+  );
+}
+
+.hero-content {
   position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  padding: 80px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+  color: #fff;
+  padding: 0 1.5rem;
 }
 
-.hero__title {
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
-  letter-spacing: 0.1em;
-  margin: 0 0 16px;
+.hero-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  letter-spacing: 0.12em;
+  text-transform: none;
+  margin-bottom: 0.7rem;
 }
 
-.hero__subtitle {
-  font-size: clamp(1.2rem, 2vw, 1.4rem);
-  margin: 0;
+.hero-subtitle {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  line-height: 1.6;
 }
 
-/* 共通セクション
------------------------------- */
-
-.section {
-  padding: 64px 16px;
-}
-
-.section--concept {
-  background-color: #faf7f1;
-}
-
-.section--vegetable {
-  background-color: #ffffff;
-}
-
-.section--interior {
-  background-color: #faf7f1;
-}
-
-.section--info {
-  background-color: #ffffff;
-}
-
-.section__inner {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.section__inner--columns {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
-@media (min-width: 768px) {
-  .section__inner--columns {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.section__column {
-  min-width: 0;
-}
-
-.section__title {
-  font-size: 1.4rem;
-  letter-spacing: 0.16em;
-  margin: 0 0 16px;
-}
-
-.section__text {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-/* MENU セクション
------------------------------- */
-
-.menu {
-  margin-top: 64px;
-}
-
-.menu__image-bar {
+/* 真ん中の余白部分（白いスペース） */
+.content-space {
   width: 100%;
-  height: 120px;
-  background-image: url("img/hero-pasta.jpg"); /* 上部にスクリーンショットと同じ写真の帯 */
+  min-height: 110vh; /* Figmaで縦長だったのでゆとりを持たせています */
+  background-color: #ffffff;
+}
+
+/* 下部のMENUセクション */
+.menu-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-image: url("https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
-}
-
-.menu__body {
-  background-color: #f8f1de; /* クリーム色の背景 */
-  padding: 48px 16px 64px;
-}
-
-.menu__inner {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.menu__title {
-  font-size: 2rem;
-  letter-spacing: 0.2em;
-  margin: 0 0 16px;
-  color: #a2551c;
-}
-
-.menu__lead {
-  margin: 0 auto 32px;
-  max-width: 640px;
-  font-size: 0.95rem;
-}
-
-.menu__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-top: 24px;
-  text-align: left;
-}
-
-@media (min-width: 768px) {
-  .menu__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.menu-column {
-  padding: 16px;
-}
-
-.menu-column__title {
-  font-size: 1rem;
-  letter-spacing: 0.15em;
-  margin: 0 0 8px;
-  color: #a2551c;
-}
-
-.menu-column__subtitle {
-  display: block;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: #777;
-  margin-top: 4px;
-}
-
-.menu-column__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-column__item {
-  font-size: 0.9rem;
-  padding: 4px 0;
-}
-
-.menu__note {
-  margin-top: 24px;
-  font-size: 0.8rem;
-  color: #666;
-}
-
-/* フッター
------------------------------- */
-
-.footer {
-  background-color: #222;
-  color: #ffffff;
-  padding: 24px 16px;
-}
-
-.footer__inner {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer__copy {
-  margin: 0;
-  font-size: 0.8rem;
-}
-
-/* ページトップに戻るボタン
------------------------------- */
-
-.back-to-top {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: #333;
-  color: #ffffff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-decoration: none;
-  font-size: 1.2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.back-to-top:hover {
-  opacity: 1;
-  transform: translateY(-2px);
+.menu-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 248, 235, 0.78); /* 少しクリーム色のオーバーレイ */
+}
+
+.menu-content {
+  position: relative;
+  margin-top: 3rem; /* 上から少し下げた位置にMENUを表示 */
+  text-align: center;
+}
+
+.menu-title {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #b45d2e; /* オレンジ寄りのブラウン */
+}
+
+/* スマホ対応（縦長を想定） */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .content-space {
+    min-height: 90vh;
+  }
+
+  .menu-hero {
+    height: 50vh;
+  }
 }
